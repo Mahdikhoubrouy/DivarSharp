@@ -1,4 +1,6 @@
 ﻿using Divar.Core;
+using InstagramApiSharp.API.Builder;
+using InstagramApiSharp.Classes;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -60,6 +62,7 @@ namespace Divar.Tester
 
                         if (postInfo.widgets.images.Count == 0)
                             continue;
+
 
                         bot.SendPhotoAsync(groupId, InputFile.FromUri(postInfo.widgets.images.First()), caption: msg, replyMarkup: inlineKeyboard, parseMode: ParseMode.Html).GetAwaiter().GetResult();
 

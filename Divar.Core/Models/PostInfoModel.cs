@@ -48,6 +48,8 @@
             public string url { get; set; }
             public string description { get; set; }
             public string brand_model { get; set; }
+            public string city { get; set; }
+            public string district { get; set; }
         }
 
         public class Header
