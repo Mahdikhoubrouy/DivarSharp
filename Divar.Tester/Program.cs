@@ -65,10 +65,10 @@ namespace Divar.Tester
 
                         PostedAds.Add(postInfo.token);
 
-                        Thread.Sleep(100);
+                        Thread.Sleep(1000);
                     }
                 }
-                catch ()
+                catch
                 {
                 }
             }
