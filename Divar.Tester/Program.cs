@@ -34,17 +34,17 @@ namespace Divar.Tester
                         string msg = $"""
                             ‼️ آگهی جدید موتورسیکلت
 
-                            🔅 * {post.data.title} * 🔅
+                            🔅 <b> {post.data.title} </b> 🔅
 
-                            💰 قیمت : * {post.data.middle_description_text} *
+                            💰 قیمت : <b> {post.data.middle_description_text} </b>
 
                             📍 مکان و زمان : {post.data.bottom_description_text}
 
-                            🖇 مدل : * {postInfo.data.brand_model} *
+                            🖇 مدل : <b> {postInfo.data.brand_model} </b>
 
-                            📋 کار کرد : * {usedTime} *
+                            📋 کار کرد : <b> {usedTime} </b>
 
-                            ⚒ سال ساخت : * {yearOfMake} *
+                            ⚒ سال ساخت : <b> {yearOfMake} </b>
 
                             🔍 توضیحات : 
                             {postInfo.data.description}
@@ -61,17 +61,15 @@ namespace Divar.Tester
                         if (postInfo.widgets.images.Count == 0)
                             continue;
 
-                        bot.SendPhotoAsync(groupId, InputFile.FromUri(postInfo.widgets.images.First()), caption: msg, replyMarkup: inlineKeyboard, parseMode: ParseMode.Markdown).GetAwaiter().GetResult();
+                        bot.SendPhotoAsync(groupId, InputFile.FromUri(postInfo.widgets.images.First()), caption: msg, replyMarkup: inlineKeyboard, parseMode: ParseMode.Html).GetAwaiter().GetResult();
 
                         PostedAds.Add(postInfo.token);
 
-                        Thread.Sleep(10000);
+                        Thread.Sleep(100);
                     }
                 }
-                catch (Exception ex)
+                catch ()
                 {
-                    if (ex.Message.Length < 4000)
-                        bot.SendTextMessageAsync(5613142421, $"❌ Error : \n\n {ex.Message}").GetAwaiter().GetResult();
                 }
             }
         }
