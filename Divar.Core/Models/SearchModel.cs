@@ -27,7 +27,7 @@ namespace Divar.Core.Models
 
         public class Category
         {
-            public string value { get; set; }
+            public object value { get; set; }
             public bool additionalProperties { get; set; }
             public Properties properties { get; set; }
             public string title { get; set; }
@@ -63,32 +63,12 @@ namespace Divar.Core.Models
 
         public class Data
         {
-            public List<Child> children { get; set; }
-            public string @enum { get; set; }
-            public string enumName { get; set; }
 
-            [JsonProperty("@type")]
-            public string type { get; set; }
             public string title { get; set; }
-            public string image_url { get; set; }
-            public Icon icon { get; set; }
-            public Action action { get; set; }
-            public List<Suggestion> suggestions { get; set; }
-            public int? image_count { get; set; }
-            public bool? has_chat { get; set; }
+            public object image_url { get; set; }
             public string top_description_text { get; set; }
             public string middle_description_text { get; set; }
             public string bottom_description_text { get; set; }
-            public string red_text { get; set; }
-            public bool? checkable { get; set; }
-            public string label { get; set; }
-            public string label_color { get; set; }
-            public string note { get; set; }
-            public List<object> tags { get; set; }
-            public string standard_label_color { get; set; }
-            public bool? is_checked { get; set; }
-            public bool? has_divider { get; set; }
-            public bool? padded { get; set; }
             public string token { get; set; }
         }
 
@@ -897,9 +877,7 @@ namespace Divar.Core.Models
 
         public class PostList
         {
-            public string widget_type { get; set; }
             public Data data { get; set; }
-            public ActionLog action_log { get; set; }
         }
 
         public class Price
@@ -956,20 +934,9 @@ namespace Divar.Core.Models
         }
 
         public class SearchRoot
-        {
-            public TabList tab_list { get; set; }
-            public List<object> suggestion_list { get; set; }
-            public InputSuggestion input_suggestion { get; set; }
+        { 
             public string title { get; set; }
-            public string subtitle { get; set; }
-            public SeoDetails seo_details { get; set; }
-            public object internal_link_sections { get; set; }
-            public long last_post_date { get; set; }
-            public long first_post_date { get; set; }
             public WebWidgets web_widgets { get; set; }
-            public List<object> banners { get; set; }
-            public Schema schema { get; set; }
-            public Jli jli { get; set; }
         }
 
         public class Schema
@@ -1164,8 +1131,6 @@ namespace Divar.Core.Models
 
         public class WebWidgets
         {
-            public List<Toolbox> toolbox { get; set; }
-            public List<object> left_toolbox { get; set; }
             public List<PostList> post_list { get; set; }
         }
 
