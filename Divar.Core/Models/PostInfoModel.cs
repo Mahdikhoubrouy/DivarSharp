@@ -2,7 +2,6 @@
 {
     public class PostInfoModel
     {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
         public class Breadcrumb
         {
             public List<Category> categories { get; set; }
